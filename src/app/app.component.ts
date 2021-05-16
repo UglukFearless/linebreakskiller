@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'line-breaks-killer';
+    title = 'Line breaks killer';
+    text = '';
+
+    textOnChange(newValue: string): void {
+        this.text = newValue.replace(/\r|\n/g, ' ').replace(/ {2,}/g, ' ');
+    }
 }
