@@ -3,7 +3,8 @@
     <div id="in" class="block">
         <textarea 
             #input_text 
-            (ngModelChange)="textOnChange($event)" 
+            (ngModelChange)="textOnChange($event)"
+            (keydown)="onKeydown($event)"
             [ngModel]="text" 
             placeholder="Insert the text here!">
             {{ text }}
